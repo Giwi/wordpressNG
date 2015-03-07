@@ -61,6 +61,7 @@ module.exports = function (grunt) {
             },
             prod: {
                 constants: {
+                    url: 'http://blog-giwisoft.rhcloud.com/?json=1',
                     debug: false
                 }
             },

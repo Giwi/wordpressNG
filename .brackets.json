@@ -1,0 +1,16 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/bootstrap/dist/js/bootstrap.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/eo.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/vn.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/tr.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/cy.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/bootstrap/grunt/bs-glyphicons-data-generator.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/hi.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/uz.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/fa.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/pl.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-bootstrap/ui-bootstrap.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/bootstrap/grunt/bs-lessdoc-parser.js"
+    ]
+}
