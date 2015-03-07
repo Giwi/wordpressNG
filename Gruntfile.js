@@ -55,13 +55,13 @@ module.exports = function (grunt) {
             },
             dev: {
                 constants: {
-                    url: 'http://blog-giwisoft.rhcloud.com/?json=1',
+                    url: 'http://blog-giwisoft.rhcloud.com/?json=1&',
                     title: 'grunt-ng-constant-beta'
                 }
             },
             prod: {
                 constants: {
-                    url: 'http://blog-giwisoft.rhcloud.com/?json=1',
+                    url: 'http://blog-giwisoft.rhcloud.com/?json=1&',
                     debug: false
                 }
             },

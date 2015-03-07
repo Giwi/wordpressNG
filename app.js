@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('wordpressNG', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngSanitize', 'ngAnimate', 'config', 'tmh.dynamicLocale', 'pascalprecht.translate']);
+    angular.module('wordpressNG', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngSanitize', 'ngAnimate', 'config', 'tmh.dynamicLocale', 'pascalprecht.translate', 'hljs']);
 
     angular.module('wordpressNG').factory('httpInterceptor', ['$q', function ($q) {
         return {
@@ -30,6 +30,8 @@
         $httpProvider.interceptors.push('httpInterceptor');
         $routeProvider.when('/', {
             templateUrl: 'partial/welcome/welcome.html'
+        }).when('/post-detail/:id', {
+            templateUrl: 'partial/post-detail/post-detail.html'
         }).otherwise({
             redirectTo: '/'
         });

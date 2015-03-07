@@ -4,9 +4,14 @@
 
         var wpService = {
             getPosts: function (page, limit) {
-
                 return $http({
                     url: url + 'count=' + limit + '&page=' + page,
+                    method: "GET"
+                });
+            },
+            getPostDetail: function (id) {
+                return $http({
+                    url: url + 'p=' + id,
                     method: "GET"
                 });
             }

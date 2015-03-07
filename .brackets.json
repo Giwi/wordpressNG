@@ -11,6 +11,13 @@
         "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/fa.js",
         "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/moment/lang/pl.js",
         "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-bootstrap/ui-bootstrap.js",
-        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/bootstrap/grunt/bs-lessdoc-parser.js"
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/bootstrap/grunt/bs-lessdoc-parser.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/config.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-dynamic-locale/test/tmhDynamicLocaleSpec.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-dynamic-locale/dist/tmhDynamicLocale.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-dynamic-locale/Gruntfile.js",
+        "/home/xavier/Dropbox/Eclipse/wordpressNG/bower_components/angular-dynamic-locale/tmhDynamicLocale.min.js"
     ]
 }
