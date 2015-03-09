@@ -1,26 +1,30 @@
 <div class="qa-message-list" ng-repeat="p in posts.posts track by $index">
     <div class="row">
-        <h4><strong><a href="#/post-detail/{{p.id}}">{{p.title}}</a></strong></h4>
+        <h4><strong><a href="#/post-detail/{{p.id}}" ng-bind="p.title"></a></strong></h4>
         <div class="row">
             <div class="col-xs-2">
                 <a href="#/author/{{p.author.id}}" class="thumbnail">
-                    <img src="{{p.thumbnail}}" alt="">
+                    <img ng-src="{{p.thumbnail}}" alt="" />
                 </a>
             </div>
             <div class="col-xs-10">
                 <p ng-bind-html="p.content"></p>
-                <p><a class="btn btn-info" href="#/post-detail/{{p.id}}">Read more</a>
+                <p><a class="btn btn-info" ng-href="#/post-detail/{{p.id}}">Read more</a>
                 </p>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
                 <p>
-                    <i class="fa fa-user"></i> by <a href="#/author/{{p.author.id}}">{{p.author.name}}</a> | <i class="fa fa-calendar"></i> {{p.date | date:'medium'}} | <i class="fa fa-comment"></i> <a href="#">{{p.comment_count}} Comments</a> | <i class="fa fa-tags"></i> Tags : <span ng-repeat="t in p.tags track by $index"><a href="#/tags/{{t.id}}"><span class="label label-info">{{t.title}}</span>
+                    <i class="fa fa-user"></i> by
+                    <a ng-href="#/author/{{p.author.id}}" ng-bind="p.author.name"></a>
+                    | <i class="fa fa-calendar"></i> <span ng-bind="p.date | date:'medium'"></span> | <i class="fa fa-comment"></i> <a href="#"><span  ng-bind="p.comment_count"></span> Comments</a> | <i class="fa fa-tags"></i> Tags :
+                    <span ng-repeat="t in p.tags track by $index"><a ng-href="#/tags/{{t.slug}}"><span class="label label-info" ng-bind="t.title"></span>
+                    </a>
                     </span>
                 </p>
             </div>
         </div>
     </div>
-    <hr>
+    <hr />
 </div>

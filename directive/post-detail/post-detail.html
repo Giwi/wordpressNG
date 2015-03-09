@@ -1,26 +1,56 @@
 <div class="qa-message-list">
     <div class="row">
-        <h4><strong><a href="#/post-detail/{{post.id}}">{{post.title}}</a></strong></h4>
+        <h4><strong><a href="#/post-detail/{{post.id}}" ng-binding="post.title"></a></strong></h4>
         <div class="row">
             <div class="col-xs-2">
-                <a href="#/author/{{post.author.id}}" class="thumbnail">
-                    <img src="{{post.thumbnail}}" alt="">
+                <a ng-href="#/author/{{post.author.id}}" class="thumbnail">
+                    <img ng-src="{{post.thumbnail}}" alt="" />
                 </a>
             </div>
             <div class="col-xs-10">
                 <p ng-bind-html="post.content"></p>
-                <p><a class="btn btn-info" href="#/post-detail/{{post.id}}">Read more</a>
-                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
                 <p>
-                    <i class="fa fa-user"></i> by <a href="#/author/{{post.author.id}}">{{p.author.name}}</a> | <i class="fa fa-calendar"></i> {{post.date | date:'medium'}} | <i class="fa fa-comment"></i> <a href="#">{{post.comment_count}} Comments</a> | <i class="fa fa-tags"></i> Tags : <span ng-repeat="t in post.tags track by $index"><a href="#/tags/{{t.id}}"><span class="label label-info">{{t.title}}</span>
+                    <i class="fa fa-user"></i> by
+                    <a ng-href="#/author/{{post.author.id}}" ng-bind="post.author.name"></a>
+                    | <i class="fa fa-calendar"></i> <span ng-bind="post.date | date:'medium'"></span> | <i class="fa fa-comment"></i> <a href="#"><span  ng-bind="post.comment_count"></span> Comments</a> | <i class="fa fa-tags"></i> Tags : <span ng-repeat="t in post.tags track by $index"><a ng-href="#/tags/{{t.slug}}"><span class="label label-info" ng-bind="t.title"></span>
+                    </a>
                     </span>
                 </p>
             </div>
         </div>
+
+        <!-- comments -->
+        <ul class="chat">
+            <li class="clearfix" ng-class-odd="'    right'" ng-class-even="'left'" ng-repeat="c in post.comments track by $index">
+                <span class="chat-img" ng-class-odd="'pull-right'" ng-class-even="'pull-left'">
+                           <i class="fa fa-user fax-fw fa-3x img-thumbnail chat-img"></i>
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <div ng-if="$even">
+                            <small class="text-muted">
+                                <span class="fa fa-clock-o"></span>
+                            <span ng-bind="c.date | date:medium"></span>
+                            </small>
+                            <strong class="primary-font pull-right" ng-bind="c.name"></strong>
+                        </div>
+                        <div ng-if="$odd">
+                            <strong class="primary-font" ng-bind="c.name"></strong>
+                            <small class="text-muted">
+                                <span class="fa fa-clock-o"></span>
+                            <span ng-bind="c.date | date:medium" class="pull-right"></span>
+                            </small>
+                        </div>
+
+                    </div>
+                    <p ng-bind-html="c.content"></p>
+                </div>
+            </li>
+        </ul>
     </div>
-    <hr>
+    <hr />
 </div>

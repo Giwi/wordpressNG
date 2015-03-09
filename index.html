@@ -7,9 +7,10 @@
     <meta charset="utf-8">
     <link href="app.less" type="text/css" rel="stylesheet/less">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
 </head>
 
-<body>
+<body ng-cloak>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -25,12 +26,22 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a>
                     </li>
+                    <page-list></page-list>
                 </ul>
+
             </div>
             <!--/.nav-collapse -->
         </div>
     </nav>
-    <div ng-view class="container starter-template">
+    <div class="container starter-template">
+        <div class="row">
+            <div class="col-md-8">
+                <div ng-view> </div>
+            </div>
+            <div class="col-md-4">
+                <category-list></category-list>
+            </div>
+        </div>
     </div>
     <!-- Livereload script for development only (stripped during dist build) -->
     <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
@@ -50,11 +61,15 @@
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
     <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
     <script src="bower_components/sugar/release/sugar.min.js"></script>
     <script src="bower_components/highlightjs/highlightjs.pack.js"></script>
     <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <!-- Add New Bower Component JS Above -->
-
 
     <!-- Main App JS -->
     <script src="config.js"></script>
@@ -64,6 +79,9 @@
     <script src="directive/post-detail/post-detail.js"></script>
     <script src="partial/welcome/welcome.js"></script>
     <script src="partial/post-detail/post-detail.js"></script>
+    <script src="partial/tags/tags.js"></script>
+    <script src="directive/pageList/pageList.js"></script>
+    <script src="directive/category-list/category-list.js"></script>
     <!-- Add New Component JS Above -->
 
 </body>

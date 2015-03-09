@@ -4,13 +4,12 @@ angular.module('wordpressNG').directive('postsList', function () {
         replace: true,
         scope: {
             page: '=',
-            limit: '='
+            limit: '=',
+            posts: '='
         },
         templateUrl: 'directive/posts-list/posts-list.html',
-        controller: function ($scope, wpService, $log) {
-            wpService.getPosts($scope.page, $scope.limit).success(function (posts) {
-                $scope.posts = posts;
-            });
+        controller: function ($scope) {
+
 
         }
     };

@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('wordpressNG', ['ui.bootstrap', 'ui.utils', 'ngRoute', 'ngSanitize', 'ngAnimate', 'config', 'tmh.dynamicLocale', 'pascalprecht.translate', 'hljs']);
+    angular.module('wordpressNG', ['angular-loading-bar', 'ui.bootstrap', 'ui.utils', 'ngRoute', 'ngSanitize', 'ngAnimate', 'config', 'tmh.dynamicLocale', 'pascalprecht.translate', 'hljs']);
 
     angular.module('wordpressNG').factory('httpInterceptor', ['$q', function ($q) {
         return {
@@ -21,10 +21,25 @@
                 return $q.reject(response);
             }
         };
-}]);
+}])
 
-    angular.module('wordpressNG').config(function ($routeProvider, $httpProvider, tmhDynamicLocaleProvider) {
+    .config(function ($routeProvider, $httpProvider, tmhDynamicLocaleProvider, cfpLoadingBarProvider, $translateProvider) {
+        $translateProvider.useLoader('$translatePartialLoader', {
+            urlTemplate: 'i18n/{part}/{lang}.json'
+        });
+
+        $translateProvider.useLoaderCache(false);
+        $translateProvider.registerAvailableLanguageKeys(['fr', 'en', 'de'], {
+            'fr_FR': 'fr',
+            'en_US': 'en',
+            'en_UK': 'en',
+            'de_DE': 'de',
+            'de_CH': 'de'
+        });
+        $translateProvider.preferredLanguage('fr');
+        $translateProvider.determinePreferredLanguage();
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         $httpProvider.interceptors.push('httpInterceptor');
@@ -32,18 +47,18 @@
             templateUrl: 'partial/welcome/welcome.html'
         }).when('/post-detail/:id', {
             templateUrl: 'partial/post-detail/post-detail.html'
+        }).when('/tags/:tag', {
+            templateUrl: 'partial/tags/tags.html'
         }).otherwise({
             redirectTo: '/'
         });
 
-    });
+    })
 
-
-
-    angular.module('wordpressNG').run(function ($rootScope, $locale, $translate, tmhDynamicLocale, $log) {
-        $log.debug($locale.id);
+    .run(function ($rootScope, $locale, $translate, tmhDynamicLocale, $log) {
         $locale.id = $translate.proposedLanguage();
         tmhDynamicLocale.set($locale.id);
+        $log.debug($locale.id);
         $rootScope.safeApply = function (fn) {
 
             var phase = $rootScope.$$phase;
