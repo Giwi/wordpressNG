@@ -8,6 +8,7 @@
     <link href="app.less" type="text/css" rel="stylesheet/less">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.css">
 </head>
 
 <body ng-cloak>
@@ -40,9 +41,11 @@
             </div>
             <div class="col-md-4">
                 <category-list></category-list>
+                <tag-cloud></tag-cloud>
             </div>
         </div>
     </div>
+
     <!-- Livereload script for development only (stripped during dist build) -->
     <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
 
@@ -69,6 +72,8 @@
     <script src="bower_components/highlightjs/highlightjs.pack.js"></script>
     <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/jqcloud2/dist/jqcloud.js"></script>
+    <script src="bower_components/angular-jqcloud/angular-jqcloud.js"></script>
     <!-- Add New Bower Component JS Above -->
 
     <!-- Main App JS -->
@@ -82,6 +87,7 @@
     <script src="partial/tags/tags.js"></script>
     <script src="directive/pageList/pageList.js"></script>
     <script src="directive/category-list/category-list.js"></script>
+    <script src="directive/tag-cloud/tag-cloud.js"></script>
     <!-- Add New Component JS Above -->
 
 </body>

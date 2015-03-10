@@ -248,7 +248,7 @@ module.exports = function (grunt) {
             },
         }
     });
-
+    grunt.registerTask('build2', ['ngconstant:prod', 'jshint', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'copy', 'htmlmin', 'clean:after']);
     grunt.registerTask('build', ['ngconstant:prod', 'jshint', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
     grunt.registerTask('serve', ['ngconstant:dev', 'dom_munger:read', 'jshint', 'connect', 'watch']);
     grunt.registerTask('test', ['dom_munger:read', 'karma:all_tests']);

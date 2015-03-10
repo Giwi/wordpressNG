@@ -1,6 +1,6 @@
 (function () {
     "use strict";
-    angular.module('wordpressNG', ['angular-loading-bar', 'ui.bootstrap', 'ui.utils', 'ngRoute', 'ngSanitize', 'ngAnimate', 'config', 'tmh.dynamicLocale', 'pascalprecht.translate', 'hljs']);
+    angular.module('wordpressNG', ['angular-loading-bar', 'ui.bootstrap', 'ui.utils', 'ngRoute', 'ngSanitize', 'ngAnimate', 'config', 'tmh.dynamicLocale', 'pascalprecht.translate', 'hljs', 'angular-jqcloud']);
 
     angular.module('wordpressNG').factory('httpInterceptor', ['$q', function ($q) {
         return {
