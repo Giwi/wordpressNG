@@ -44,6 +44,7 @@ You can host your customized site to [Surge](surge.sh) it's free ;)
 
     sudo npm install surge -g
     cd ~/giwiSoft/giwiSoft
+    grunt build
     surge --project ./dist --domain yourDomain.surge.sh
 
 Enjoy
