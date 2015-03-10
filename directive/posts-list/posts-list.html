@@ -19,7 +19,7 @@
                     <i class="fa fa-user"></i> by
                     <a ng-href="#/author/{{p.author.id}}" ng-bind="p.author.name"></a>
                     | <i class="fa fa-calendar"></i> <span ng-bind="p.date | date:'medium'"></span> | <i class="fa fa-comment"></i> <a href="#"><span  ng-bind="p.comment_count"></span> Comments</a> | <i class="fa fa-tags"></i> Tags :
-                    <span ng-repeat="t in p.tags track by $index"><a ng-href="#/tags/{{t.slug}}"><span class="label label-info" ng-bind="t.title"></span>
+                    <span ng-repeat="t in p.tags track by $index"><a ng-href="#/tags/{{t.id}}"><span class="label label-info" ng-bind="t.title"></span>
                     </a>
                     </span>
                 </p>

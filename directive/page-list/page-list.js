@@ -3,7 +3,7 @@ angular.module('wordpressNG').directive('pageList', function () {
         restrict: 'E',
         replace: true,
         scope: {},
-        templateUrl: 'directive/pageList/pageList.html',
+        templateUrl: 'directive/page-list/page-list.html',
         controller: function ($scope, wpService, $log) {
             $scope.pages = [];
             wpService.getPages().success(function (data) {

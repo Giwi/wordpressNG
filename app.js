@@ -49,6 +49,8 @@
             templateUrl: 'partial/post-detail/post-detail.html'
         }).when('/tags/:tag', {
             templateUrl: 'partial/tags/tags.html'
+        }).when('/category/:cat', {
+            templateUrl: 'partial/category-list/category-list.html'
         }).otherwise({
             redirectTo: '/'
         });

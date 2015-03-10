@@ -17,7 +17,13 @@
             },
             getPostsByTag: function (page, limit, tag) {
                 return $http({
-                    url: url + '?json=get_tag_posts&tag_slug=' + tag + '&count=' + limit + '&page=' + page,
+                    url: url + '?json=get_tag_posts&id=' + tag + '&count=' + limit + '&page=' + page,
+                    method: "GET"
+                });
+            },
+            getPostsByCategory: function (page, limit, cat) {
+                return $http({
+                    url: url + '?json=get_category_posts&id=' + cat + '&count=' + limit + '&page=' + page,
                     method: "GET"
                 });
             },
