@@ -12,13 +12,13 @@ This is still in development stage, so it's quite unstable and not fully working
 
 ### Prerequisite
 
-You need a running Wordpress instance and the [JSON-API](https://wordpress.org/plugins/json-api/) installed.
+You need a running Wordpress instance and the [WP-REST-API](http://v2.wp-api.org/) installed.
 
 #### Ubuntu
 
     sudo apt-get install git nodejs nodejs-legacy npm
     sudo npm install bower grunt-cli -g
-    
+
 ## Build and install
 
     mkdir ~/giwiSoft
@@ -27,7 +27,7 @@ You need a running Wordpress instance and the [JSON-API](https://wordpress.org/p
     cd wordpressNG
     npm install
     bower install
-    
+
 Modify Gruntfile.js lines 58 and 64 in order to put your blog's url.
 
 ## Run
@@ -38,7 +38,7 @@ Modify Gruntfile.js lines 58 and 64 in order to put your blog's url.
 
    grunt dist
 
-## Hosting 
+## Hosting
 
 You can host your customized site to [Surge](surge.sh) it's free ;)
 

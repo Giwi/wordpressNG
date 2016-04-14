@@ -1,0 +1,31 @@
+<div class="qa-message-list" ng-repeat="p in ctrl.posts track by $index">
+    <div class="row">
+        <h4><strong><a href="#/post-detail/{{p.id}}" ng-bind-html="p.title.rendered"></a></strong></h4>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <featured_image id="p.featured_image"></featured_image>
+            </div>
+            <div class="col-xs-10">
+                <p ng-bind-html="p.content.rendered"></p>
+
+                <p><a class="btn btn-info" ng-href="#/post-detail/{{p.id}}">Read more</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p>
+                    <author-name author="p.author"></author-name>
+                    | <i class="fa fa-calendar"></i> <span ng-bind="p.date | date:'medium'"></span> | <i
+                        class="fa fa-comment"></i> <a href="#">Comments</a> | <i class="fa fa-tags"></i> Tags :
+                    <span ng-repeat="t in p.tags track by $index"><a ng-href="#/tags/{{t.id}}"><span
+                            class="label label-info" ng-bind="t.title"></span>
+                    </a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr/>
+</div>
