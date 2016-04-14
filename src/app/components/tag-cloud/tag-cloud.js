@@ -2,15 +2,12 @@ angular.module('wordpressNG').directive('tagCloud', function () {
     return {
         restrict: 'E',
         replace: true,
-        scope: {
-
-        },
+        scope: {       },
         templateUrl: 'app/components/tag-cloud/tag-cloud.html',
-        controller: function ($scope, wpService, $log, $location) {
+        controller: function ($scope, wpService) {
             $scope.words = [];
-            wpService.getTags().success(function (data, status, headers, config) {
-                $log.debug("getTags", data, status, headers, config);
-                data.tags.forEach(function (t) {
+            wpService.getTags().then(function (data) {
+                data.data.forEach(function (t) {
                     this.push({
                         text: t.title,
                         weight: t.post_count,

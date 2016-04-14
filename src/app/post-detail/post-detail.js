@@ -1,5 +1,5 @@
-angular.module('wordpressNG').controller('PostDetailCtrl', function ($scope, $routeParams, wpService) {
-    wpService.getPostDetail($routeParams.id).success(function (post) {
-        $scope.post = post.post;
+angular.module('wordpressNG').controller('PostDetailCtrl', function ($scope, $routeParams, wpService, $log) {
+    wpService.getPostDetail($routeParams.id).then(function (data) {
+        $scope.post = data.data;
     });
 });

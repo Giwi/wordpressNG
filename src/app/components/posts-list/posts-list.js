@@ -12,10 +12,7 @@
             controllerAs: 'ctrl',
             bindToController: true,
             templateUrl: 'app/components/posts-list/posts-list.html',
-            controller: function ($scope) {
-
-
-            }
+            controller: function ($scope) {}
         };
     });
 }());

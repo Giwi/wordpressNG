@@ -6,9 +6,8 @@ angular.module('wordpressNG').directive('pageList', function () {
         templateUrl: 'app/components/page-list/page-list.html',
         controller: function ($scope, wpService, $log) {
             $scope.pages = [];
-            wpService.getPages().success(function (data) {
-                $scope.pages = data.pages;
-                $log.debug("getPages", data);
+            wpService.getPages().then(function (data) {
+                $scope.pages = data.data;
             });
 
         }

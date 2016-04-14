@@ -1,20 +1,15 @@
 (function () {
     'use strict';
-    angular.module('wordpressNG').controller('WelcomeController', function (wpService, $log) {
+    angular.module('wordpressNG').controller('WelcomeController', function (wpService) {
         var vm = this;
-        vm.page = 0;
+        vm.page = 1;
         vm.limit = 5;
         vm.posts = [];
-        wpService.getPosts(vm.page, vm.limit).success(function (posts) {
-            vm.posts = posts;
-            $log.debug(posts);
+        wpService.getPosts(vm.page, vm.limit).then(function (data) {
+            vm.posts = data.data;
         });
-
         wpService.getCategories(0).success(function (data) {
             vm.cats = data;
-            $log.debug(data);
         });
-
-
     });
 }());

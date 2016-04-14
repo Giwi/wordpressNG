@@ -33,21 +33,27 @@
                     method: "GET"
                 });
             },
-            getCategories: function (parent) {
+            getCategories: function () {
                 return $http({
-                    url: url + '?json=get_category_index&parent=' + parent,
+                    url: url + '/categories' ,
                     method: "GET"
                 });
             },
             getTags: function () {
                 return $http({
-                    url: url + '?json=get_tag_index',
+                    url: url + '/tags',
                     method: "GET"
                 });
             },
             getPages: function () {
                 return $http({
-                    url: url + '?json=get_page_index',
+                    url: url + '/pages',
+                    method: "GET"
+                });
+            },
+            getAuthor: function (id) {
+                return $http({
+                    url: url + '/users/'+id,
                     method: "GET"
                 });
             }

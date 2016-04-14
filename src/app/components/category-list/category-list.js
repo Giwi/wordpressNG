@@ -2,15 +2,12 @@ angular.module('wordpressNG').directive('categoryList', function () {
     return {
         restrict: 'E',
         replace: true,
-        scope: {
-
-        },
+        scope: {},
         templateUrl: 'app/components/category-list/category-list.html',
-        controller: function ($scope, wpService, $log) {
+        controller: function ($scope, wpService) {
             $scope.categories = [];
-            wpService.getCategories(0).success(function (data) {
-                $scope.categories = data.categories;
-                $log.debug("getCategories", data);
+            wpService.getCategories(0).then(function (data) {
+                $scope.categories = data.data;
             });
         }
     };
