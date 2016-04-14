@@ -13,5 +13,5 @@ gulp.task('scripts', ['ngConfig'], function () {
     .pipe($.eslint())
     .pipe($.eslint.format())
     .pipe(browserSync.reload({ stream: true }))
-    .pipe($.size())
+    .pipe($.size());
 });

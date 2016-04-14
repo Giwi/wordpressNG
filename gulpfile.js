@@ -24,7 +24,7 @@ wrench.readdirSyncRecursive('./gulp').filter(function (file) {
 gulp.task('ngConfig', function () {
     gulp.src('conf/configFile.json')
         .pipe(gulpNgConfig('wordpressNG.config'))
-        .pipe(gulp.dest(conf.paths.src + '/app'))
+        .pipe(gulp.dest(conf.paths.src + '/app'));
 });
 /**
  *  Default task clean temporaries directories and launch the
